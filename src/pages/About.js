@@ -1,0 +1,65 @@
+import React from 'react'
+import {Flex, Heading, Text, VStack} from '@chakra-ui/react'
+import {motion} from 'framer-motion'
+import {htmlSvgIcon, cssSvgIcon, bootstrapSvgIcon, javascriptSvgIcon, reactSvgIcon, nodeSvgIcon, mongoSvgIcon, expressSvgIcon} from '../helpers/Icons'
+const About = () => {
+
+    const MotionHeading = motion(Heading)
+    const MotionVStack = motion(VStack)
+
+    const pageHeading = () =>{
+        return(
+            <VStack spacing = {10} alignItems = 'flex-start' w = '100%'>
+                <MotionHeading initial = {{opacity:0}} animate = {{opacity:1}} transition = {{duration: 0.8}}>About Me</MotionHeading>
+                <hr style = {{color: 'green', width:'100%', borderTop:'0.2em solid Green'}}/>
+            </VStack>
+        )
+    }
+    const introductoryText = () =>{
+        return(
+            <MotionVStack alignItems = 'flex-start' spacing = {8}>
+                <Text fontSize = {[null, '20px', '20px']}>
+                    Hi, I am Vikaramjit, a web developer from Edmonton, Canada, with a passion for all
+                    Javascript realted things. <br/><br/>
+                    I have experience working with Javascript front and backend technologies: MongoDB, ExpressJs, ReactJs, and NodeJs. 
+                    I am Constantly trying to improve my knowledge about the applications used in the industry. For example, currently, I am learning Docker and Kubernetes.
+                    I love solving real world problems and try to base my side projects on the ideas that I come across based on daily needs.
+                    <br/><br/>
+                    I spend most of my time learning and building. Apart from this, my interests are reading history, watching films,
+                    and going on long walks with my dog.
+                </Text>
+            </MotionVStack>
+        )
+    }
+
+    
+
+    const mySkillsSection = () =>{
+        return(
+            <VStack spacing = {6} alignItems = 'flex-start'>
+                <Heading>My Skills...</Heading>
+                <Flex flexWrap = 'wrap' justifyContent = 'flex-start' alignItems = "space-between" h ='40'>
+                    {htmlSvgIcon()}
+                    {cssSvgIcon()}
+                    {bootstrapSvgIcon()}
+                    {javascriptSvgIcon()}
+                    {reactSvgIcon()}
+                    {nodeSvgIcon()}
+                    {mongoSvgIcon()}  
+                    {expressSvgIcon()} 
+                </Flex>
+            </VStack>
+        )
+    }
+
+    
+    return (
+        <MotionVStack initial = {{x:-100, opacity:0}} animate = {{x:0, opacity:1}} transition = {{duration:0.2}} exit = {{x:100, opacity:1}} alignItems = 'flex-start' spacing = {20} overflow = 'hidden' pb = '10' mt = '50'>
+            {pageHeading()}
+            {introductoryText()}
+            {mySkillsSection()}
+        </MotionVStack>
+    )
+}
+
+export default About
