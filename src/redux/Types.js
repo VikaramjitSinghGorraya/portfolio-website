@@ -1,0 +1,4 @@
+export const PROJECTS_FETCHED = 'PROJECTS_FETCHED'
+export const PROJECT_POSTED = 'PROJECT_POSTED'
+export const SUCCESS = 'SUCCESS'
+export const FAILURE = 'FAILURE'
