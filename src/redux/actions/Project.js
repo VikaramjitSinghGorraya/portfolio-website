@@ -31,8 +31,8 @@ export const failure = (error)=>{
 
 export const getProjectsProcess = () =>{
     return dispatch=>{
-        axios.get('https://portfolio-website-backend-mjpl1tr4s-vikaramjitsinghgorraya.vercel.app/api/getProjects')
-            .then((res)=>console.log(res.data))
+        axios.get('https://portfolio-website-backend.vercel.app/api/getProjects')
+            .then((res)=>dispatch(projectsFetched(res.data.projects)))
             .catch((err)=>dispatch(failure(err.response.data.error)))
     }
 }
