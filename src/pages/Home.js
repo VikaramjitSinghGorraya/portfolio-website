@@ -26,7 +26,7 @@ const Home = ({getProjectsProcess, projectsData}) => {
         return(
             <Flex justifyContent = {['center','space-between']} alignItems = 'flex-start'  m = 'auto' flexWrap =' wrap'>
                 {projectsData.projects.map((project, index)=>(
-                    <PortfolioCard key = {index} photo = {project.photo.data} projectId = {project._id} title = {project.title} description = {project.description} technologiesUsed= {project.technologiesUsed} githubLink = {project.githubLink} liveLink = {project.liveLink} />     
+                    <PortfolioCard key = {index}projectId = {project._id} title = {project.title} description = {project.description} technologiesUsed= {project.technologiesUsed} githubLink = {project.githubLink} liveLink = {project.liveLink} />     
                 ))}
             </Flex>  
         )
