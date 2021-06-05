@@ -1,4 +1,5 @@
 import {PROJECTS_FETCHED, PROJECT_POSTED, SUCCESS, FAILURE} from '../Types'
+import axios from 'axios'
 
 export const projectsFetched = (projects) =>{
     return{
@@ -25,5 +26,13 @@ export const failure = (error)=>{
     return{
         type: FAILURE,
         payload: error
+    }
+}
+
+export const getProjectsProcess = () =>{
+    return dispatch=>{
+        axios.get('https://portfolio-website-backend-mjpl1tr4s-vikaramjitsinghgorraya.vercel.app/api/getProjects')
+            .then((res)=>console.log(res.data))
+            .catch((err)=>dispatch(failure(err.response.data.error)))
     }
 }
