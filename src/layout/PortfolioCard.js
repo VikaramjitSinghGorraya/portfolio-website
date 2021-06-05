@@ -25,8 +25,8 @@ const PortfolioCard = ({ photo ,projectId, title, description, technologiesUsed,
     },[])
 
     return (
-            <MotionVStack initial ={{marginTop:100, opacity:0}} animate = {{marginTop:0, opacity:1}} transition = {{duration:0.4}} alignItems = 'flex-start' spacing = {6} flex= {[1,1,0.49,0.49]} mb = '10'>
-                <Box minH = '16em' minW = '100%'>
+            <MotionVStack initial ={{marginTop:100, opacity:0}} animate = {{marginTop:0, opacity:1}} transition = {{duration:0.4}} alignItems = 'flex-start' spacing = {[6]} maxW ={['100%','48%']} maxH ={['48%']} mb = '10'>
+                <Box minH = {['fit-content']} minW = '100%'>
                     <LazyLoadImage
                         effect = 'blur'
                         height= '100%'
@@ -35,7 +35,6 @@ const PortfolioCard = ({ photo ,projectId, title, description, technologiesUsed,
                         width='100%'
                     />
                 </Box>
-                <LazyLoadComponent >
                 <Heading as = 'h6' fontSize = '2xl'>{title}</Heading>
                 <VStack alignItems = 'flex-start' spacing = {5}>
                     <Text as = 'p' fontSize = 'xl'>{description} </Text>
@@ -58,8 +57,6 @@ const PortfolioCard = ({ photo ,projectId, title, description, technologiesUsed,
                         </HStack>
                     </HStack>
                 </VStack>
-                </LazyLoadComponent>
-                
             </MotionVStack>
 )}
 
