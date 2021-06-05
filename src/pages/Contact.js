@@ -1,11 +1,26 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Heading, HStack, Text, VStack, Link, FormControl, Input, Textarea, Flex, Button} from '@chakra-ui/react'
 import {motion} from 'framer-motion'
 import {linkedInSvg,phoneSvg,emailSvg, githubSvg} from '../helpers/Icons'
+
+const MotionVStack = motion(VStack)
+
 const Contact = () => {
 
-    const MotionVStack = motion(VStack)
+    const [messageInfo, setMessageInfo] = useState({
+        email:'',
+        name:'',
+        message:''
+    })
 
+    const inputChangeHandler = (e) =>{
+        setMessageInfo({...messageInfo, [e.target.name]: e.target.value})
+    }
+
+    const submitHandler = (e) =>{
+        e.preventDefault()
+        console.log('Submittinng')
+    }
     const pageHeading = () =>{
         return(
             <VStack mb = '10' spacing = {10} w = '100%' alignItems = 'flex-start'>
@@ -32,11 +47,14 @@ const Contact = () => {
         return(
             <Flex direction = 'column' mt = {['85','85','85','0']}>
             <Heading>Or Fill Out And Submit This Form</Heading>
-            <FormControl w = '100%' >
-                <Input name = 'name' type = 'text' placeholder = 'Your name here...' required mt = '5' />
-                <Input name = 'email' type = 'email' placeholder = 'Your email here...' required mt = '5' />
-                <Textarea name = 'message' h = '150' placeholder = 'Your message here...' required mt = '5' />
-                <Button>SUBMIT</Button>
+            <FormControl w = '100%' onSubmit = {submitHandler} >
+                <form>
+                <Input name = 'name' type = 'text' placeholder = 'Your name here...' required mt = '5' onChange = {inputChangeHandler} />
+                <Input name = 'email' type = 'email' placeholder = 'Your email here...' required mt = '5' onChange = {inputChangeHandler} />
+                <Textarea name = 'message' h = '150' placeholder = 'Your message here...' required mt = '5' onChange = {inputChangeHandler} />
+                <Button type = 'submit'>SUBMIT</Button>
+                </form>
+                
             </FormControl>
             </Flex>
         )
