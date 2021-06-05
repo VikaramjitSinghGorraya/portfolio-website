@@ -1,11 +1,14 @@
 import React, {useState} from 'react'
 import {Heading, HStack, Text, VStack, Link, FormControl, Input, Textarea, Flex, Button} from '@chakra-ui/react'
 import {motion} from 'framer-motion'
+import {connect} from 'react-redux'
+import {sendMessage} from '../redux/actions/Visitor'
+
 import {linkedInSvg,phoneSvg,emailSvg, githubSvg} from '../helpers/Icons'
 
 const MotionVStack = motion(VStack)
 
-const Contact = () => {
+const Contact = ({sendMessage, visitorData}) => {
 
     const [messageInfo, setMessageInfo] = useState({
         email:'',
@@ -13,13 +16,14 @@ const Contact = () => {
         message:''
     })
 
+
     const inputChangeHandler = (e) =>{
         setMessageInfo({...messageInfo, [e.target.name]: e.target.value})
     }
 
     const submitHandler = (e) =>{
         e.preventDefault()
-        console.log('Submittinng')
+        sendMessage(messageInfo)
     }
     const pageHeading = () =>{
         return(
@@ -78,4 +82,15 @@ const Contact = () => {
     )
 }
 
-export default Contact
+const mapDispatchToProps = (dispatch) =>{
+    return{
+        sendMessage: (messageData)=>dispatch(sendMessage(messageData))
+    }
+}
+
+const mapStateToProps = (state)=>{
+    return{
+        visitorData: state.visitor
+    }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(Contact)
