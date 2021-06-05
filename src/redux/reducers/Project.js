@@ -3,8 +3,7 @@ import {PROJECTS_FETCHED, PROJECT_POSTED, SUCCESS, FAILURE} from '../Types'
 const initialState = {
     projects:[],
     success:'',
-    failure:'',
-    isLoading: true
+    failure:''
 }
 
 export const projectReducer = (state = initialState, action) =>{

@@ -12,13 +12,15 @@ export const visitorReducer = (state = initialState, action) =>{
             return{
                 ...state,
                 success: action.payload,
-                error:''
+                error:'',
+                isLoading: false
             }
         case FAILURE:
             return{
                 ...state,
                 error: action.payload,
                 success:'',
+                isLoading: false
             }
         default:
             return state
