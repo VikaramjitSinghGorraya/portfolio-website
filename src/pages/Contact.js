@@ -3,12 +3,15 @@ import {Heading, HStack, Text, VStack, Link, FormControl, Input, Textarea, Flex,
 import {motion} from 'framer-motion'
 import {connect} from 'react-redux'
 import {sendMessage} from '../redux/actions/Visitor'
-
 import {linkedInSvg,phoneSvg,emailSvg, githubSvg} from '../helpers/Icons'
+import Toast from '../helpers/Toast'
 
 const MotionVStack = motion(VStack)
 
 const Contact = ({sendMessage, visitorData}) => {
+
+    
+    const {error, success} = visitorData
 
     const [messageInfo, setMessageInfo] = useState({
         email:'',
@@ -16,14 +19,18 @@ const Contact = ({sendMessage, visitorData}) => {
         message:''
     })
 
+    const [showMessage, setShowMessage] = useState(false)
 
     const inputChangeHandler = (e) =>{
+        setShowMessage(false)
         setMessageInfo({...messageInfo, [e.target.name]: e.target.value})
     }
 
     const submitHandler = (e) =>{
         e.preventDefault()
+        setShowMessage(false)
         sendMessage(messageInfo)
+        setShowMessage(true)
     }
     const pageHeading = () =>{
         return(
@@ -78,6 +85,9 @@ const Contact = ({sendMessage, visitorData}) => {
                 {contactForm()}
             </Flex>
             {pageFooter()}
+            {error && showMessage && <Toast toastId = 'error-tost' title = 'Following error occured' description = {error} successStatus = {false}/>}
+            {success && showMessage&& <Toast toastId = 'success-tost' title = 'It is done!!!' description = {success} successStatus = {true}/>}
+
         </MotionVStack>
     )
 }
