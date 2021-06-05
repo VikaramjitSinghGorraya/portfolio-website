@@ -8,10 +8,10 @@ const Contact = () => {
 
     const pageHeading = () =>{
         return(
-            <>
+            <VStack mb = '10' spacing = {10} w = '100%' alignItems = 'flex-start'>
                 <Heading>Contact</Heading>
                 <hr style = {{color: 'green', width:'100%', borderTop:'0.2em solid Green'}}/>
-            </>
+            </VStack>
         )
     }
     const contactMethods = () =>{
@@ -30,7 +30,7 @@ const Contact = () => {
 
     const contactForm = () =>{
         return(
-            <Flex direction = 'column' mt = {['85','0','0']}>
+            <Flex direction = 'column' mt = {['85','85','85','0']}>
             <Heading>Or Fill Out And Submit This Form</Heading>
             <FormControl w = '100%' >
                 <Input name = 'name' type = 'text' placeholder = 'Your name here...' required mt = '5' />
@@ -51,7 +51,7 @@ const Contact = () => {
     return (
         <MotionVStack initial = {{x:-100, opacity:0}} animate = {{x:0, opacity:1}} transition = {{duration:0.2}} exit = {{x:100, opacity:1}} spacing = {10} alignItems = 'flex-start' pb = '10' mt = '50'>
             {pageHeading()}
-            <Flex direction = {['column','row','row']} justifyContent = 'space-between' alignItems ='flex-start' w = '100%' mt = '30'>
+            <Flex direction = {['column','column','column','row']} justifyContent = 'space-between' alignItems ='flex-start' w = '100%' mt = '30'>
                 {contactMethods()}
                 {contactForm()}
             </Flex>
