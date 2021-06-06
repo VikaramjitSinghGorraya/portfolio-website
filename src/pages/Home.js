@@ -2,6 +2,7 @@ import React, {useEffect} from 'react'
 import {VStack, HStack, Heading, Text, Flex, Box, Image, StackDivider} from '@chakra-ui/react'
 import {motion} from 'framer-motion'
 import {connect} from 'react-redux'
+import {Helmet} from 'react-helmet'
 import {getProjectsProcess} from '../redux/actions/Project'
 import PortfolioCard from '../layout/PortfolioCard'
 import Header from '../layout/Header'
@@ -24,6 +25,9 @@ const Home = ({getProjectsProcess, projectsData}) => {
     }
     return (
         <VStack spacing = {5} justifyContent = 'center' mt = {['auto','50']}>
+            <Helmet>
+                <title>Home | Vikaramjit</title>
+            </Helmet>
             <Header heading = 'Portfolio'/>
             {projectCard()}
         </VStack>
