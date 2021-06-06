@@ -31,6 +31,7 @@ const Contact = ({sendMessage, visitorData}) => {
         setShowMessage(false)
         sendMessage(messageInfo)
         setShowMessage(true)
+        success && setMessageInfo({...messageInfo, name:'', email:'', message:''})
     }
     const pageHeading = () =>{
         return(
