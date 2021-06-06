@@ -8,15 +8,15 @@ import Contact from './pages/Contact'
 import Home from './pages/Home'
 const App = () => {
 
-    var history = useHistory()
+    // var history = useHistory()
 
-    useEffect(()=>{
-        history.location.pathname === '/'
-        ?
-        document.title = `Home | Vikaramjit Singh`
-        :
-        document.title = `${history.location.pathname.substring(1, history.location.pathname.length)} | Vikaramjit Singh`
-    },[history.location.pathname])
+    // useEffect(()=>{
+    //     history.location.pathname === '/'
+    //     ?
+    //     document.title = `Home | Vikaramjit Singh`
+    //     :
+    //     document.title = `${history.location.pathname.substring(1, history.location.pathname.length)} | Vikaramjit Singh`
+    // },[history.location.pathname])
 
     return (
         <Box maxW = {['85%','97%','97%']} mx = 'auto'>
