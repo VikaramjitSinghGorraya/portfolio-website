@@ -4,7 +4,7 @@ import {motion} from 'framer-motion'
 import {connect} from 'react-redux'
 import {getProjectsProcess} from '../redux/actions/Project'
 import PortfolioCard from '../layout/PortfolioCard'
-import axios from 'axios'
+import Header from '../layout/Header'
 
 const MotionHeading = motion(Heading)
 const Home = ({getProjectsProcess, projectsData}) => {
@@ -12,15 +12,6 @@ const Home = ({getProjectsProcess, projectsData}) => {
     useEffect(()=>{
         getProjectsProcess()
     },[])
-
-    const pageHeading = () =>{
-        
-        return(
-            <VStack spacing = {10} alignItems = 'flex-start' w = '100%' mb = '10'>
-                <MotionHeading initial = {{opacity:0}} animate = {{opacity:1}} transition = {{duration: 0.8}}>Portfolio</MotionHeading>
-            </VStack>
-        )
-    }
 
     const projectCard = () =>{
         return(
@@ -32,8 +23,8 @@ const Home = ({getProjectsProcess, projectsData}) => {
         )
     }
     return (
-        <VStack spacing = {5}  mt = 'auto' justifyContent = 'center'>
-            {pageHeading()}
+        <VStack spacing = {5} justifyContent = 'center' mt = {['auto','50']}>
+            <Header heading = 'Portfolio'/>
             {projectCard()}
         </VStack>
     )

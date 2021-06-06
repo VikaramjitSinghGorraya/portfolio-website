@@ -2,19 +2,12 @@ import React from 'react'
 import {Flex, Heading, Text, VStack} from '@chakra-ui/react'
 import {motion} from 'framer-motion'
 import {htmlSvgIcon, cssSvgIcon, bootstrapSvgIcon, javascriptSvgIcon, reactSvgIcon, nodeSvgIcon, mongoSvgIcon, expressSvgIcon} from '../helpers/Icons'
+import Header from '../layout/Header'
+
 const About = () => {
 
-    const MotionHeading = motion(Heading)
     const MotionVStack = motion(VStack)
 
-    const pageHeading = () =>{
-        return(
-            <VStack spacing = {10} alignItems = 'flex-start' w = '100%'>
-                <MotionHeading initial = {{opacity:0}} animate = {{opacity:1}} transition = {{duration: 0.8}}>About Me</MotionHeading>
-                <hr style = {{color: 'green', width:'100%', borderTop:'0.2em solid Green'}}/>
-            </VStack>
-        )
-    }
     const introductoryText = () =>{
         return(
             <MotionVStack alignItems = 'flex-start' spacing = {8}>
@@ -55,7 +48,7 @@ const About = () => {
     
     return (
         <MotionVStack initial = {{x:-100, opacity:0}} animate = {{x:0, opacity:1}} transition = {{duration:0.2}} exit = {{x:100, opacity:1}} alignItems = 'flex-start' spacing = {20} overflow = 'hidden' pb = '10' mt = '50'>
-            {pageHeading()}
+            <Header heading = 'About'/>
             {introductoryText()}
             {mySkillsSection()}
         </MotionVStack>

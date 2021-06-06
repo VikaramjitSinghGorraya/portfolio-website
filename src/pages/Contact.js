@@ -5,6 +5,7 @@ import {connect} from 'react-redux'
 import {sendMessage} from '../redux/actions/Visitor'
 import {linkedInSvg,phoneSvg,emailSvg, githubSvg} from '../helpers/Icons'
 import Toast from '../helpers/Toast'
+import Header from '../layout/Header'
 
 const MotionVStack = motion(VStack)
 
@@ -33,14 +34,7 @@ const Contact = ({sendMessage, visitorData}) => {
         setShowMessage(true)
         success && setMessageInfo({...messageInfo, name:'', email:'', message:''})
     }
-    const pageHeading = () =>{
-        return(
-            <VStack mb = '10' spacing = {10} w = '100%' alignItems = 'flex-start'>
-                <Heading>Contact</Heading>
-                <hr style = {{color: 'green', width:'100%', borderTop:'0.2em solid Green'}}/>
-            </VStack>
-        )
-    }
+
     const contactMethods = () =>{
         return(
             <VStack alignItems = 'flex-start' spacing = {8} >
@@ -80,7 +74,7 @@ const Contact = ({sendMessage, visitorData}) => {
 
     return (
         <MotionVStack initial = {{x:-100, opacity:0}} animate = {{x:0, opacity:1}} transition = {{duration:0.2}} exit = {{x:100, opacity:1}} spacing = {10} alignItems = 'flex-start' pb = '10' mt = '50'>
-            {pageHeading()}
+            <Header heading = 'Contact' />
             <Flex direction = {['column','column','column','row']} justifyContent = 'space-between' alignItems ='flex-start' w = '100%' mt = '30'>
                 {contactMethods()}
                 {contactForm()}
