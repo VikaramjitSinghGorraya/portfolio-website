@@ -2,24 +2,28 @@ import React, {useEffect} from 'react'
 import {Route, Switch, useHistory} from 'react-router-dom'
 import {Box} from '@chakra-ui/react'
 import {AnimatePresence} from 'framer-motion'
+import {Helmet} from 'react-helmet'
 import Navbar from './layout/Navbar'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Home from './pages/Home'
 const App = () => {
 
-    // var history = useHistory()
+    var history = useHistory()
+    
+    const setTitle = ()=>{
+        if(history.location.pathname === '/')
+        return `Home | Vikaramjit Singh`
+        else
+        return document.title = `${history.location.pathname.substring(1, history.location.pathname.length)} | Vikaramjit Singh`
 
-    // useEffect(()=>{
-    //     history.location.pathname === '/'
-    //     ?
-    //     document.title = `Home | Vikaramjit Singh`
-    //     :
-    //     document.title = `${history.location.pathname.substring(1, history.location.pathname.length)} | Vikaramjit Singh`
-    // },[history.location.pathname])
-
+    }
+    
     return (
         <Box maxW = {['85%','97%','97%']} mx = 'auto'>
+            <Helmet>
+                <title>{setTitle()}</title>
+            </Helmet>
             <Navbar/> 
             <Box >
                 <AnimatePresence exitBeforeEnter>

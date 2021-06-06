@@ -25,9 +25,9 @@ const Home = ({getProjectsProcess, projectsData}) => {
     }
     return (
         <VStack spacing = {5} justifyContent = 'center' mt = {['auto','50']}>
-            <Helmet>
+            {/* <Helmet>
                 <title>Home | Vikaramjit</title>
-            </Helmet>
+            </Helmet> */}
             <Header heading = 'Portfolio'/>
             {projectCard()}
         </VStack>

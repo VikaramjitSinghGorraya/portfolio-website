@@ -75,9 +75,9 @@ const Contact = ({sendMessage, visitorData}) => {
 
     return (
         <MotionVStack initial = {{x:-100, opacity:0}} animate = {{x:0, opacity:1}} transition = {{duration:0.2}} exit = {{x:100, opacity:1}} spacing = {10} alignItems = 'flex-start' pb = '10' mt = {['auto','50']}>
-            <Helmet>
+            {/* <Helmet>
                 <title>Contact | Vikaramjit</title>
-            </Helmet>
+            </Helmet> */}
             <Header heading = 'Contact' />
             <Flex direction = {['column','column','column','row']} justifyContent = 'space-between' alignItems ='flex-start' w = '100%' mt = '30'>
                 {contactMethods()}
