@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import {VStack, HStack, Heading, Text, Flex, Image, Link, Box, Skeleton} from '@chakra-ui/react'
+import {VStack, HStack, Heading, Text, Flex, Image, Link, Box, Skeleton, StackDivider} from '@chakra-ui/react'
 import {motion} from 'framer-motion'
 import { LazyLoadImage, LazyLoadComponent } from 'react-lazy-load-image-component'
 import 'react-lazy-load-image-component/src/effects/blur.css'
@@ -25,8 +25,8 @@ const PortfolioCard = ({ photo ,projectId, title, description, technologiesUsed,
     },[])
 
     return (
-            <MotionVStack initial ={{marginTop:100, opacity:0}} animate = {{marginTop:0, opacity:1}} transition = {{duration:0.4}} alignItems = 'flex-start' spacing = {[6]} maxW ={['100%','48%']} maxH ={['48%']} mb = '10'>
-                <Box minH = {['fit-content']} minW = '100%'>
+            <MotionVStack initial ={{marginTop:100, opacity:0}} animate = {{marginTop:0, opacity:1}} transition = {{duration:0.4}} alignItems = 'flex-start' maxW ={['100%','48%']} mb = '10'>
+                <Box minH = {['25vw']} minW = '100%'>
                     <LazyLoadImage
                         effect = 'blur'
                         height= '100%'
@@ -35,27 +35,29 @@ const PortfolioCard = ({ photo ,projectId, title, description, technologiesUsed,
                         width='100%'
                     />
                 </Box>
-                <Heading as = 'h6' fontSize = '2xl'>{title}</Heading>
-                <VStack alignItems = 'flex-start' spacing = {5}>
-                    <Text as = 'p' fontSize = 'xl'>{description} </Text>
-                    <VStack alignItems = 'flex-start' spacing = {0}>
-                        <Text fontWeight = 'bold'>Tech used:</Text>
-                        <HStack flexWrap = 'wrap' spacing = {0}>
-                            {technologiesUsed.map((technology, index)=>(
-                                    <Text key = {index} as = 'p' fontWeight = 'bold'>{technology}{index===technologiesUsed.length-1? '' : `,\u00A0 \u00A0`} </Text>
-                            ))}
+                <VStack spacing = {5} alignItems = 'flex-start' mt = '40'>
+                    <Heading as = 'h6' fontSize = '2xl'>{title}</Heading>
+                    <VStack alignItems = 'flex-start' spacing = {5}>
+                        <Text as = 'p' fontSize = 'xl'>{description} </Text>
+                        <VStack alignItems = 'flex-start' spacing = {0}>
+                            <Text fontWeight = 'bold'>Tech used:</Text>
+                            <HStack flexWrap = 'wrap' spacing = {0}>
+                                {technologiesUsed.map((technology, index)=>(
+                                        <Text key = {index} as = 'p' fontWeight = 'bold'>{technology}{index===technologiesUsed.length-1? '' : `,\u00A0 \u00A0`} </Text>
+                                ))}
+                            </HStack>
+                        </VStack>
+                        <HStack spacing = {10}>
+                            <HStack>
+                                {githubSvg()}
+                                <Link isExternal href = {githubLink}>Github</Link>
+                            </HStack>
+                            <HStack>
+                                {visitSiteSvg()}
+                                <Link isExternal href = {liveLink}>Visit the website</Link>
+                            </HStack>
                         </HStack>
                     </VStack>
-                    <HStack spacing = {10}>
-                        <HStack>
-                            {githubSvg()}
-                            <Link isExternal href = {githubLink}>Github</Link>
-                        </HStack>
-                        <HStack>
-                            {visitSiteSvg()}
-                            <Link isExternal href = {liveLink}>Visit the website</Link>
-                        </HStack>
-                    </HStack>
                 </VStack>
             </MotionVStack>
 )}
