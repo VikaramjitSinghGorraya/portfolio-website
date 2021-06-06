@@ -19,7 +19,7 @@ const App = () => {
     },[history.location.pathname])
 
     return (
-        <Box maxW = {['92%','97%','97%']} mx = 'auto'>
+        <Box maxW = {['85%','97%','97%']} mx = 'auto'>
             <Navbar/> 
             <Box >
                 <AnimatePresence exitBeforeEnter>
