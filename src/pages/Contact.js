@@ -32,8 +32,8 @@ const Contact = ({sendMessage, visitorData}) => {
         e.preventDefault()
         setShowMessage(false)
         sendMessage(messageInfo)
-        setShowMessage(true)
         setMessageInfo({...messageInfo, name:'', email:'', message:''})
+        setShowMessage(true)
     }
     
     const contactMethods = () =>{
