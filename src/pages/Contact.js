@@ -41,7 +41,7 @@ const Contact = ({sendMessage, visitorData}) => {
                 <VStack alignItems = 'flex-start' spacing = {4} pl = '4' >
                     <HStack>{phoneSvg()}<Text as = 'p' fontSize = 'large'>+1 902-943-0518</Text></HStack>
                     <HStack>{emailSvg()}<Text fontSize = 'large'>vikaramjitgoraya01@gmail.com</Text></HStack>
-                    <Link href = 'https://github.com/VikaramjitSinghGorraya' isExternal><HStack>{githubSvg()}<Text fontSize = 'large'>Guthub</Text> </HStack></Link>
+                    <Link href = 'https://github.com/VikaramjitSinghGorraya' isExternal><HStack>{githubSvg()}<Text fontSize = 'large'>Github</Text> </HStack></Link>
                     <Link href = 'https://www.linkedin.com/in/vikaramjit-goraya-961a63152/' isExternal><HStack>{linkedInSvg()}<Text fontSize = 'large'>LinkedIn</Text></HStack></Link>
                 </VStack>
             </VStack>
