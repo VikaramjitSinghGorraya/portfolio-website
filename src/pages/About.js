@@ -2,8 +2,6 @@ import React from 'react'
 import {Flex, Heading, Text, VStack} from '@chakra-ui/react'
 import {motion} from 'framer-motion'
 import {Helmet} from 'react-helmet'
-import MetaTags from 'react-meta-tags'
-import ReactTitle from 'react-meta-tags';
 import {htmlSvgIcon, cssSvgIcon, bootstrapSvgIcon, javascriptSvgIcon, reactSvgIcon, nodeSvgIcon, mongoSvgIcon, expressSvgIcon} from '../helpers/Icons'
 import Header from '../layout/Header'
 
@@ -54,9 +52,6 @@ const About = () => {
             {/* <Helmet>
                 <title>About | Vikaramjit</title>
             </Helmet> */}
-             <MetaTags>
-                <title>Home | Vikaramjit Singh</title>
-            </MetaTags>
             <Header heading = 'About'/>
             {introductoryText()}
             {mySkillsSection()}
