@@ -3,6 +3,7 @@ import {Route, Switch, useHistory} from 'react-router-dom'
 import {Box} from '@chakra-ui/react'
 import {AnimatePresence} from 'framer-motion'
 import {Helmet} from 'react-helmet'
+import MetaTags from 'react-meta-tags';
 import Navbar from './layout/Navbar'
 import About from './pages/About'
 import Contact from './pages/Contact'
@@ -21,9 +22,9 @@ const App = () => {
     
     return (
         <Box maxW = {['85%','97%','97%']} mx = 'auto'>
-            <Helmet>
+            <MetaTags>
                 <title>{setTitle()}</title>
-            </Helmet>
+            </MetaTags>
             <Navbar/> 
             <Box >
                 <AnimatePresence exitBeforeEnter>
