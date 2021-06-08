@@ -3,7 +3,7 @@ import {VStack, HStack, Heading, Text, Flex, Box, Image, StackDivider} from '@ch
 import {motion} from 'framer-motion'
 import {connect} from 'react-redux'
 import {Helmet} from 'react-helmet'
-import ReactTitle from 'react-meta-tags';
+import MetaTags from 'react-meta-tags'
 import {getProjectsProcess} from '../redux/actions/Project'
 import PortfolioCard from '../layout/PortfolioCard'
 import Header from '../layout/Header'
@@ -29,7 +29,9 @@ const Home = ({getProjectsProcess, projectsData}) => {
             {/* <Helmet>
                 <title>Home | Vikaramjit</title>
             </Helmet> */}
-            <ReactTitle title='Home | Vikaramjit Singh'/>
+            <MetaTags>
+                <title>Home | Vikaramjit Singh</title>
+            </MetaTags>
             <Header heading = 'Portfolio'/>
             {projectCard()}
         </VStack>
