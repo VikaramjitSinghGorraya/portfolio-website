@@ -33,12 +33,9 @@ const Contact = ({sendMessage, visitorData}) => {
         setShowMessage(false)
         sendMessage(messageInfo)
         setShowMessage(true)
-    }
-
-    const clearInput = () =>{
         setMessageInfo({...messageInfo, name:'', email:'', message:''})
     }
-
+    
     const contactMethods = () =>{
         return(
             <VStack alignItems = 'flex-start' spacing = {8} >
@@ -88,7 +85,7 @@ const Contact = ({sendMessage, visitorData}) => {
             </Flex>
             {pageFooter()}
             {error && showMessage && <Toast toastId = 'error-tost' title = 'Following error occured' description = {error} successStatus = {false}/>}
-            {success && showMessage&& <Toast toastId = 'success-tost' title = 'It is done!!!' description = {success} successStatus = {true}/> && clearInput()}
+            {success && showMessage&& <Toast toastId = 'success-tost' title = 'It is done!!!' description = {success} successStatus = {true}/>}
 
         </MotionVStack>
     )
