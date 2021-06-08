@@ -35,7 +35,6 @@ const Contact = ({sendMessage, visitorData}) => {
         setMessageInfo({...messageInfo, name:'', email:'', message:''})
         setShowMessage(true)
     }
-    
     const contactMethods = () =>{
         return(
             <VStack alignItems = 'flex-start' spacing = {8} >
@@ -58,7 +57,7 @@ const Contact = ({sendMessage, visitorData}) => {
                 <form>
                 <Input name = 'name' type = 'text' placeholder = 'Your name here...' required mt = '5' onChange = {inputChangeHandler} value = {messageInfo.name} />
                 <Input name = 'email' type = 'email' placeholder = 'Your email here...' required mt = '5' onChange = {inputChangeHandler} value = {messageInfo.email} />
-                <Textarea name = 'message' h = '150' placeholder = 'Your message here...' required mt = '5' onChange = {inputChangeHandler} value = {messageInfo.password} />
+                <Textarea name = 'message' h = '150' placeholder = 'Your message here...' required mt = '5' onChange = {inputChangeHandler} value = {messageInfo.message} />
                 <Button type = 'submit'>SUBMIT</Button>
                 </form>
                 
