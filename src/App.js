@@ -23,7 +23,7 @@ const App = () => {
     return (
         <Box maxW = {['85%','97%','97%']} mx = 'auto'>
             
-            <ReactTitle title={setTitle()}/>
+           
             <Navbar/> 
             <Box >
                 <AnimatePresence exitBeforeEnter>

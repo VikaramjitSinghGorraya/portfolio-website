@@ -3,6 +3,7 @@ import {Heading, HStack, Text, VStack, Link, FormControl, Input, Textarea, Flex,
 import {motion} from 'framer-motion'
 import {connect} from 'react-redux'
 import {Helmet} from 'react-helmet'
+import ReactTitle from 'react-meta-tags';
 import {sendMessage} from '../redux/actions/Visitor'
 import {linkedInSvg,phoneSvg,emailSvg, githubSvg} from '../helpers/Icons'
 import Toast from '../helpers/Toast'
@@ -78,6 +79,7 @@ const Contact = ({sendMessage, visitorData}) => {
             {/* <Helmet>
                 <title>Contact | Vikaramjit</title>
             </Helmet> */}
+             <ReactTitle title='Contact | Vikaramjit Singh'/>
             <Header heading = 'Contact' />
             <Flex direction = {['column','column','column','row']} justifyContent = 'space-between' alignItems ='flex-start' w = '100%' mt = '30'>
                 {contactMethods()}
