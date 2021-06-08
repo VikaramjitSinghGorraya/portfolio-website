@@ -16,7 +16,6 @@ export const failure = (error)=>{
 }
 
 export const sendMessage = (messageInfo) =>{
-    console.log(messageInfo)
     return dispatch=>{
         axios.post('https://portfolio-website-backend.vercel.app/api/contact', messageInfo)
             .then((res)=>dispatch(success((res.data.message))))

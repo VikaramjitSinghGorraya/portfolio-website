@@ -1,7 +1,6 @@
 import React from 'react'
 import {Flex, Heading, Text, VStack} from '@chakra-ui/react'
 import {motion} from 'framer-motion'
-import {Helmet} from 'react-helmet'
 import {htmlSvgIcon, cssSvgIcon, bootstrapSvgIcon, javascriptSvgIcon, reactSvgIcon, nodeSvgIcon, mongoSvgIcon, expressSvgIcon} from '../helpers/Icons'
 import Header from '../layout/Header'
 
@@ -49,9 +48,6 @@ const About = () => {
     
     return (
         <MotionVStack initial = {{x:-100, opacity:0}} animate = {{x:0, opacity:1}} transition = {{duration:0.2}} exit = {{x:100, opacity:1}} alignItems = 'flex-start' spacing = {20} overflow = 'hidden' pb = '10' mt = {['auto','50']}>
-            {/* <Helmet>
-                <title>About | Vikaramjit</title>
-            </Helmet> */}
             <Header heading = 'About'/>
             {introductoryText()}
             {mySkillsSection()}

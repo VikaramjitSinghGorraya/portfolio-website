@@ -10,13 +10,12 @@ import Home from './pages/Home'
 const App = () => {
 
     var history = useHistory()
-
+    
     const setTitle = ()=>{
         if(history.location.pathname === '/')
         return `Home | Vikaramjit Singh`
         else
         return `${history.location.pathname.substring(1, history.location.pathname.length)} | Vikaramjit Singh`
-
     }
     
     return (

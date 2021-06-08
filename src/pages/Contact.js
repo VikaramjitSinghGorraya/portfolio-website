@@ -2,7 +2,6 @@ import React, {useState} from 'react'
 import {Heading, HStack, Text, VStack, Link, FormControl, Input, Textarea, Flex, Button} from '@chakra-ui/react'
 import {motion} from 'framer-motion'
 import {connect} from 'react-redux'
-import {Helmet} from 'react-helmet'
 import {sendMessage} from '../redux/actions/Visitor'
 import {linkedInSvg,phoneSvg,emailSvg, githubSvg} from '../helpers/Icons'
 import Toast from '../helpers/Toast'
@@ -74,9 +73,6 @@ const Contact = ({sendMessage, visitorData}) => {
 
     return (
         <MotionVStack initial = {{x:-100, opacity:0}} animate = {{x:0, opacity:1}} transition = {{duration:0.2}} exit = {{x:100, opacity:1}} spacing = {10} alignItems = 'flex-start' pb = '10' mt = {['auto','50']}>
-            {/* <Helmet>
-                <title>Contact | Vikaramjit</title>
-            </Helmet> */}
             <Header heading = 'Contact' />
             <Flex direction = {['column','column','column','row']} justifyContent = 'space-between' alignItems ='flex-start' w = '100%' mt = '30'>
                 {contactMethods()}

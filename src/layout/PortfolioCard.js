@@ -1,11 +1,10 @@
 import React, {useEffect, useState} from 'react'
-import {VStack, HStack, Heading, Text, Flex, Image, Link, Box, Skeleton, StackDivider} from '@chakra-ui/react'
+import {VStack, HStack, Heading, Text, Link, Box} from '@chakra-ui/react'
 import {motion} from 'framer-motion'
-import { LazyLoadImage, LazyLoadComponent } from 'react-lazy-load-image-component'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 import 'react-lazy-load-image-component/src/effects/blur.css'
 import 'react-lazy-load-image-component/src/effects/black-and-white.css'
 import {githubSvg, visitSiteSvg} from '../helpers/Icons'
-import image from '../image/ds.png'
 import axios from 'axios'
 
 const MotionVStack = motion(VStack)
