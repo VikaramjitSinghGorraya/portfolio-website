@@ -27,13 +27,15 @@ const PortfolioCard = ({ photo ,projectId, title, description, technologiesUsed,
     return (
             <MotionVStack initial ={{marginTop:100, opacity:0}} animate = {{marginTop:0, opacity:1}} transition = {{duration:0.4}} alignItems = 'flex-start' maxW ={['100%','48%']} mb = '10'>
                 <Box minH = {['25vw']} minW = '100%'>
-                    <LazyLoadImage
-                        effect = 'blur'
-                        height= '100%'
-                        src={projectImage} 
-                        alt = 'image'
-                        width='100%'
-                    />
+                    <Link isExternal href = {liveLink}>
+                        <LazyLoadImage
+                            effect = 'blur'
+                            height= '100%'
+                            src={projectImage} 
+                            alt = 'image'
+                            width='100%'
+                        />
+                    </Link>
                 </Box>
                 <VStack spacing = {5} alignItems = 'flex-start' mt = '40'>
                     <Heading as = 'h6' fontSize = '2xl'>{title}</Heading>
