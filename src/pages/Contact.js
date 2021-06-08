@@ -56,9 +56,9 @@ const Contact = ({sendMessage, visitorData}) => {
             <Heading>Or Fill Out And Submit This Form</Heading>
             <FormControl w = '100%' onSubmit = {submitHandler} >
                 <form>
-                <Input name = 'name' type = 'text' placeholder = 'Your name here...' required mt = '5' onChange = {inputChangeHandler} />
-                <Input name = 'email' type = 'email' placeholder = 'Your email here...' required mt = '5' onChange = {inputChangeHandler} />
-                <Textarea name = 'message' h = '150' placeholder = 'Your message here...' required mt = '5' onChange = {inputChangeHandler} />
+                <Input name = 'name' type = 'text' placeholder = 'Your name here...' required mt = '5' onChange = {inputChangeHandler} value = {messageInfo.name} />
+                <Input name = 'email' type = 'email' placeholder = 'Your email here...' required mt = '5' onChange = {inputChangeHandler} value = {messageInfo.email} />
+                <Textarea name = 'message' h = '150' placeholder = 'Your message here...' required mt = '5' onChange = {inputChangeHandler} value = {messageInfo.password} />
                 <Button type = 'submit'>SUBMIT</Button>
                 </form>
                 
