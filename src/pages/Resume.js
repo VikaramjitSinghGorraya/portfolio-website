@@ -1,5 +1,5 @@
 import React from 'react'
-import { VStack, Button, Image } from '@chakra-ui/react'
+import { VStack, Button, Image, Box } from '@chakra-ui/react'
 import {motion} from 'framer-motion'
 import Header from '../layout/Header'
 import ResumeScreenshot from '../image/ResumeScreenshot.jpg'
