@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import {Route, Switch, useHistory} from 'react-router-dom'
 import {Box} from '@chakra-ui/react'
 import {AnimatePresence} from 'framer-motion'
@@ -7,6 +7,8 @@ import Navbar from './layout/Navbar'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Home from './pages/Home'
+import Resume from './pages/Resume'
+
 const App = () => {
 
     var history = useHistory()
@@ -29,8 +31,8 @@ const App = () => {
                 <Switch>
                     <Route exact path = '/About' component = {About} />
                     <Route exact path = '/Contact' component = {Contact} />
+                    <Route exact path = '/Resume' component = {Resume} />
                     <Route exact path = '/' component = {Home} />
-
                 </Switch>
                 </AnimatePresence>
                 
