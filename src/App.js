@@ -21,7 +21,7 @@ const App = () => {
     }
     
     return (
-        <Box maxW = {['85%','97%','97%']} mx = 'auto'>
+        <Box maxW = {['90%','97%','97%']} mx = 'auto'>
             <Helmet>
                 <title>{setTitle()}</title>
             </Helmet>
